@@ -2,21 +2,21 @@ let 障礙 = 0
 serial.redirectToUSB()
 basic.forever(function () {
     serial.writeLine("" + pins.analogReadPin(AnalogPin.P1) + "---" + pins.analogReadPin(AnalogPin.P2))
-    if (pins.analogReadPin(AnalogPin.P1) > 600) {
-        robotbit.MotorRunDual(
-        robotbit.Motors.M1B,
-        105,
-        robotbit.Motors.M2A,
-        0
-        )
-    } else if (pins.analogReadPin(AnalogPin.P2) > 600) {
+    if (pins.analogReadPin(AnalogPin.P1) > 500) {
         robotbit.MotorRunDual(
         robotbit.Motors.M1B,
         0,
         robotbit.Motors.M2A,
-        150
+        160
         )
-    } else if (pins.analogReadPin(AnalogPin.P1) > 600 && pins.analogReadPin(AnalogPin.P2) > 600) {
+    } else if (pins.analogReadPin(AnalogPin.P2) > 500) {
+        robotbit.MotorRunDual(
+        robotbit.Motors.M1B,
+        115,
+        robotbit.Motors.M2A,
+        0
+        )
+    } else if (pins.analogReadPin(AnalogPin.P1) > 500 && pins.analogReadPin(AnalogPin.P2) > 500) {
         robotbit.MotorStopAll()
     } else {
         robotbit.MotorRunDual(
