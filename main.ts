@@ -33,6 +33,7 @@ basic.forever(function () {
     DigitalPin.P0,
     sensors.PingUnit.Centimeters
     )))
+    障礙 = 0
     if (sensors.sensor_ping(
     DigitalPin.P8,
     DigitalPin.P0,
